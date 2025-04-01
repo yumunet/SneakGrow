@@ -2,9 +2,9 @@ Tweaks:
   # Minimum ticks of interval between growing
   cooldownTicks: 5
   # Grow saplings when player sneaks
-  growSaplings: 100
+  growSaplings: true
   # Grow crops when player sneaks
-  growCrops: 100
+  growCrops: true
   # Grow crops that are unaffected by bone meal when player sneaks (Sugar Cane, Cactus, Nether Wart, Chorus Flower)
   growExtraCrops: true
   # Show bonemeal particles when appropriate. Not sure why you would turn this off, but eh
