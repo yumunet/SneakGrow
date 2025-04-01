@@ -4,5 +4,6 @@ main: net.teamfruit.sneakgrow.SneakGrow
 api-version: '1.20.6'
 prefix: EasyStructure
 authors: [Kamesuta]
+contributors: [yumu]
 description: You can accelerate growing for saplings and crops by sneaking
 website: https://www.teamfruit.net/
