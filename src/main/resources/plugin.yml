@@ -1,7 +1,7 @@
 name: SneakGrow
 version: ${project.version}
 main: net.teamfruit.sneakgrow.SneakGrow
-api-version: '1.16'
+api-version: '1.20.6'
 prefix: EasyStructure
 authors: [Kamesuta]
 description: You can accelerate growing for saplings and crops by sneaking

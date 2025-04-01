@@ -30,14 +30,9 @@ public class ReflectionUtil {
     private static final String NMS_NAMESPACE = "net.minecraft.server";
     private static final String CRAFTBUKKIT_NAMESPACE = "org.bukkit.craftbukkit";
 
-    private static final String VERSION;
-
     private static final Class[] NO_ARGUMENTS = new Class[0];
 
     static {
-        String path = Bukkit.getServer().getClass().getPackage().getName();
-        VERSION = path.substring(path.lastIndexOf('.') + 1);
-
         try {
             nmsItemBoneMeal = getNmsClass("net.minecraft.world.item", "ItemBoneMeal");
             nmsItemStack = getNmsClass("net.minecraft.world.item", "ItemStack");
@@ -64,12 +59,12 @@ public class ReflectionUtil {
         try {
             return Class.forName(packagePath + "." + name);
         } catch (ClassNotFoundException e) {
-            return Class.forName(NMS_NAMESPACE + "." + VERSION + "." + name);
+            return Class.forName(NMS_NAMESPACE + "." + name);
         }
     }
 
     public static Class<?> getCraftBukkitClass(String name) throws ClassNotFoundException {
-        return Class.forName(CRAFTBUKKIT_NAMESPACE + "." + VERSION + "." + name);
+        return Class.forName(CRAFTBUKKIT_NAMESPACE + "." + name);
     }
 
     public static Object itemStackAsNmsCopy(ItemStack itemStack) {

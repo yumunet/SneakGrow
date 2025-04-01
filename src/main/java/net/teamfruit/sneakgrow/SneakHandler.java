@@ -90,13 +90,13 @@ public class SneakHandler implements Listener {
     private void sendPacketGrowBlock(Location location) {
         Collection<Player> players = location.getNearbyPlayers(48);
         for (Player player : players)
-            player.playEffect(location, Effect.VILLAGER_PLANT_GROW, Integer.valueOf(0));
+            player.playEffect(location, Effect.BEE_GROWTH, Integer.valueOf(10));
     }
 
     private void sendPacketGrowEntity(Location location) {
         Collection<Player> players = location.getNearbyPlayers(48);
         for (Player player : players)
-            player.spawnParticle(Particle.VILLAGER_HAPPY, location, 5, .2, .2, .2);
+            player.spawnParticle(Particle.HAPPY_VILLAGER, location, 5, .2, .2, .2);
     }
 
     private List<Block> getAgeableBlockInRange(Location location, int radius) {
