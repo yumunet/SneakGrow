@@ -7,6 +7,8 @@ Tweaks:
   growCrops: 100
   # Show bonemeal particles when appropriate. Not sure why you would turn this off, but eh
   showParticles: true
+  # Play sound of using bone meal
+  playSound: true
   # Radius of blocks to check for saplings and crops
   blockRadius: 5
   # Radius of mobs to check for saplings and crops

@@ -12,6 +12,7 @@ public final class SneakGrow extends JavaPlugin {
     public static boolean enableSaplings;
     public static boolean enableCrops;
     public static boolean showParticles;
+    public static boolean playSound;
     public static int blockRadius;
     public static int mobRadius;
     public static double blockPercentage;
@@ -27,6 +28,7 @@ public final class SneakGrow extends JavaPlugin {
         enableSaplings = config.getBoolean("Tweaks.growSaplings", true);
         enableCrops = config.getBoolean("Tweaks.growCrops", true);
         showParticles = config.getBoolean("Tweaks.showParticles", true);
+        playSound = config.getBoolean("Tweaks.playSound", true);
         blockRadius = config.getInt("Tweaks.blockRadius", 5);
         mobRadius = config.getInt("Tweaks.mobRadius", 5);
         blockPercentage = config.getDouble("Tweaks.blockPercentage", 0.1);

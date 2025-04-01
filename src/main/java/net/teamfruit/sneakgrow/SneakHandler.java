@@ -55,7 +55,7 @@ public class SneakHandler implements Listener {
                             Object nmsBlockPosition = ReflectionUtil.constructBlockPosition(block.getX(), block.getY(), block.getZ());
                             ReflectionUtil.applyBoneMeal(nmsBoneMeal, nmsWorld, nmsBlockPosition);
 
-                            if (SneakGrow.showParticles)
+                            if (SneakGrow.showParticles || SneakGrow.playSound)
                                 sendPacketGrowBlock(block.getLocation());
                         }
                     });
@@ -89,8 +89,12 @@ public class SneakHandler implements Listener {
 
     private void sendPacketGrowBlock(Location location) {
         Collection<Player> players = location.getNearbyPlayers(48);
-        for (Player player : players)
-            player.playEffect(location, Effect.BEE_GROWTH, Integer.valueOf(10));
+        for (Player player : players) {
+            if (SneakGrow.showParticles)
+                player.playEffect(location, Effect.BEE_GROWTH, Integer.valueOf(10));
+            if (SneakGrow.playSound)
+                player.playSound(location, Sound.ITEM_BONE_MEAL_USE, 1, 1);
+        }
     }
 
     private void sendPacketGrowEntity(Location location) {
