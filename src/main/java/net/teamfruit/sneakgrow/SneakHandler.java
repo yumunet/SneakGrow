@@ -52,8 +52,15 @@ public class SneakHandler implements Listener {
 
                     ageables.forEach(block -> {
                         if (rnd.nextFloat() < SneakGrow.blockPercentage) {
-                            Object nmsBlockPosition = ReflectionUtil.constructBlockPosition(block.getX(), block.getY(), block.getZ());
-                            ReflectionUtil.applyBoneMeal(nmsBoneMeal, nmsWorld, nmsBlockPosition);
+                            Material type = block.getType();
+                            if (SneakGrow.enableExtraCrops && (type == Material.SUGAR_CANE || type == Material.CACTUS || type == Material.CHORUS_FLOWER || type == Material.NETHER_WART)) {
+                                for (int i = 0; i < SneakGrow.extraRandomTicks; i++) {
+                                    block.randomTick();
+                                }
+                            } else {
+                                Object nmsBlockPosition = ReflectionUtil.constructBlockPosition(block.getX(), block.getY(), block.getZ());
+                                ReflectionUtil.applyBoneMeal(nmsBoneMeal, nmsWorld, nmsBlockPosition);
+                            }
 
                             if (SneakGrow.showParticles || SneakGrow.playSound)
                                 sendPacketGrowBlock(block.getLocation());
